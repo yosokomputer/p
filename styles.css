@@ -6,8 +6,8 @@
   --text: #eef3f7;
   --muted: #aab5c1;
   --line: rgba(255, 255, 255, 0.09);
-  --accent: #ff7a21;
-  --accent-soft: #ffb36d;
+  --accent: #28c76f;
+  --accent-soft: #9ef0bf;
   --surface: #f5f1e8;
   --shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
   --radius: 24px;
@@ -27,7 +27,7 @@ body {
   margin: 0;
   font-family: "Manrope", sans-serif;
   background:
-    radial-gradient(circle at top left, rgba(255, 122, 33, 0.22), transparent 24%),
+    radial-gradient(circle at top left, rgba(40, 199, 111, 0.22), transparent 24%),
     radial-gradient(circle at top right, rgba(255, 255, 255, 0.08), transparent 18%),
     linear-gradient(180deg, #0b1015 0%, #111922 40%, #0d1218 100%);
   color: var(--text);
@@ -76,7 +76,7 @@ a {
   width: 52px;
   height: 52px;
   border-radius: 18px;
-  background: linear-gradient(135deg, var(--accent), #ff9850);
+  background: linear-gradient(135deg, var(--accent), #72e3a2);
   color: #10151b;
   font-family: "Rajdhani", sans-serif;
   font-size: 1.2rem;
@@ -162,9 +162,9 @@ a {
 }
 
 .button-primary {
-  background: linear-gradient(135deg, var(--accent), #ff9750);
+  background: linear-gradient(135deg, var(--accent), #79e6a7);
   color: #11151b;
-  box-shadow: 0 14px 30px rgba(255, 122, 33, 0.3);
+  box-shadow: 0 14px 30px rgba(40, 199, 111, 0.3);
 }
 
 .button-secondary {
@@ -182,7 +182,7 @@ a {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(120deg, rgba(255, 122, 33, 0.14), transparent 42%),
+    linear-gradient(120deg, rgba(40, 199, 111, 0.14), transparent 42%),
     linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.12));
   pointer-events: none;
 }
@@ -273,7 +273,7 @@ a {
   display: inline-flex;
   padding: 8px 14px;
   border-radius: 999px;
-  background: rgba(255, 122, 33, 0.12);
+  background: rgba(40, 199, 111, 0.12);
   color: var(--accent-soft);
   font-size: 0.82rem;
   font-weight: 800;
@@ -365,7 +365,7 @@ a {
   height: 48px;
   border-radius: 14px;
   margin-bottom: 16px;
-  background: linear-gradient(135deg, var(--accent), #ff954d);
+  background: linear-gradient(135deg, var(--accent), #78e5a7);
   color: #11161c;
   font-family: "Rajdhani", sans-serif;
   font-size: 1.15rem;
@@ -439,7 +439,7 @@ a {
   flex-direction: column;
   justify-content: flex-end;
   background:
-    linear-gradient(160deg, rgba(255, 122, 33, 0.2), rgba(10, 15, 20, 0.8)),
+    linear-gradient(160deg, rgba(40, 199, 111, 0.2), rgba(10, 15, 20, 0.8)),
     radial-gradient(circle at top, rgba(255, 255, 255, 0.15), transparent 30%);
 }
 
@@ -482,7 +482,7 @@ a {
   padding: 36px;
   border-radius: 32px;
   background:
-    linear-gradient(135deg, rgba(255, 122, 33, 0.2), rgba(255, 255, 255, 0.03)),
+    linear-gradient(135deg, rgba(40, 199, 111, 0.2), rgba(255, 255, 255, 0.03)),
     rgba(18, 25, 33, 0.92);
 }
 
