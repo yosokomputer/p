@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test Mic Online | Yoso Komputer</title>
+    <meta
+      name="description"
+      content="Halaman test mic online tanpa iklan untuk mengecek mikrofon laptop, headset, atau USB mic langsung dari browser."
+    />
+    <link rel="icon" type="image/jpeg" href="../file/logo.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Rajdhani:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <div
+        data-shared-header
+        data-asset-path=".."
+        data-home-path="../index.html"
+        data-test-keyboard-path="../test-keyboard/"
+        data-test-camera-path="../test-camera/"
+        data-test-audio-path="../test-audio/"
+        data-test-mic-path="./"
+        data-active-nav="test-mic"
+      ></div>
+
+      <main class="tester-shell">
+        <section class="container tester-hero">
+          <div class="tester-panel reveal">
+            <p class="eyebrow">Mic Tester</p>
+            <h1>Cek mikrofon dengan level meter dan rekaman singkat.</h1>
+            <p class="hero-text">
+              Tool ini meminta izin mikrofon, menampilkan level input secara real-time, lalu menyediakan rekaman singkat agar Anda bisa memastikan suara benar-benar tertangkap oleh browser.
+            </p>
+
+            <div class="tester-summary">
+              <div class="tester-stat">
+                <strong id="mic-permission">Belum diminta</strong>
+                <span>Status izin mic</span>
+              </div>
+              <div class="tester-stat">
+                <strong id="mic-device">Belum ada</strong>
+                <span>Input aktif</span>
+              </div>
+              <div class="tester-stat">
+                <strong id="mic-level-label">0%</strong>
+                <span>Level input</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="tester-stack">
+            <article class="tester-card reveal">
+              <div class="camera-toolbar">
+                <div class="camera-select-wrap">
+                  <label for="mic-select">Pilih Mikrofon</label>
+                  <select id="mic-select" class="camera-select">
+                    <option value="">Mendeteksi mikrofon...</option>
+                  </select>
+                </div>
+                <div class="camera-actions">
+                  <button class="button button-primary" type="button" id="mic-start">Izinkan Mic</button>
+                  <button class="button button-secondary" type="button" id="mic-stop">Stop</button>
+                  <button class="button button-secondary" type="button" id="mic-refresh">Refresh Device</button>
+                </div>
+              </div>
+
+              <div class="camera-status" id="mic-status" data-state="idle">
+                Klik `Izinkan Mic` lalu setujui permission browser untuk memulai tes mikrofon.
+              </div>
+
+              <div class="mic-stage">
+                <div class="mic-stage-head">
+                  <strong>Input Meter</strong>
+                  <span id="mic-stage-text">Menunggu akses mikrofon</span>
+                </div>
+                <div class="mic-meter-track" aria-hidden="true">
+                  <div class="mic-meter-fill" id="mic-meter-fill"></div>
+                </div>
+                <div class="mic-meter-grid" id="mic-meter-grid" aria-hidden="true">
+                  <span class="mic-meter-bar"></span>
+                  <span class="mic-meter-bar"></span>
+                  <span class="mic-meter-bar"></span>
+                  <span class="mic-meter-bar"></span>
+                  <span class="mic-meter-bar"></span>
+                  <span class="mic-meter-bar"></span>
+                  <span class="mic-meter-bar"></span>
+                  <span class="mic-meter-bar"></span>
+                  <span class="mic-meter-bar"></span>
+                  <span class="mic-meter-bar"></span>
+                  <span class="mic-meter-bar"></span>
+                  <span class="mic-meter-bar"></span>
+                </div>
+              </div>
+            </article>
+
+            <article class="tester-card reveal">
+              <div class="tester-inline-actions">
+                <div>
+                  <h2>Verifikasi Rekaman</h2>
+                  <p>Rekam suara 5 detik lalu putar ulang hasilnya untuk memastikan mic tidak hanya terdeteksi, tetapi juga benar-benar menangkap audio.</p>
+                </div>
+                <div class="tester-compact-actions">
+                  <button class="tester-reset" type="button" id="mic-record">Rekam 5 Detik</button>
+                  <button class="tester-reset" type="button" id="mic-playback">Putar Rekaman</button>
+                </div>
+              </div>
+
+              <div class="camera-info-grid">
+                <div class="contact-block">
+                  <span>Nama Device</span>
+                  <strong id="mic-label">Belum aktif</strong>
+                </div>
+                <div class="contact-block">
+                  <span>Sample Rate</span>
+                  <strong id="mic-rate">-</strong>
+                </div>
+                <div class="contact-block">
+                  <span>Status Rekaman</span>
+                  <strong id="mic-record-state">Belum ada</strong>
+                </div>
+              </div>
+
+              <audio class="recorded-audio" id="mic-recorded-audio" controls></audio>
+
+              <ul class="tester-log" id="mic-log">
+                <li>Siap meminta izin akses mikrofon.</li>
+              </ul>
+
+              <p class="tester-hint">
+                Tips: jika level tidak bergerak, cek mute fisik di headset/laptop, pengaturan input OS, dan pastikan mikrofon tidak sedang dipakai aplikasi meeting lain.
+              </p>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <div data-shared-footer data-asset-path=".."></div>
+    </div>
+
+    <a class="floating-wa" href="https://wa.me/6285183190794" target="_blank" rel="noreferrer" aria-label="Hubungi WhatsApp">
+      WA
+    </a>
+
+    <script src="../shared/header.js"></script>
+    <script src="../shared/footer.js"></script>
+    <script src="../script.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stress Test CPU | Yoso Komputer</title>
+    <meta
+      name="description"
+      content="Stress test CPU browser untuk membebani prosesor dengan web worker, mengukur aktivitas thread, dan melihat respons UI."
+    />
+    <link rel="icon" type="image/jpeg" href="../file/logo.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Rajdhani:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <div data-shared-header data-asset-path=".." data-home-path="../index.html" data-active-nav="test-cpu"></div>
+
+      <main class="tester-shell">
+        <section class="container tester-hero">
+          <div class="tester-panel reveal">
+            <p class="eyebrow">CPU Stress Test</p>
+            <h1>Bebani prosesor dengan worker paralel dari browser.</h1>
+            <p class="hero-text">
+              Tool ini menjalankan komputasi berat di beberapa thread web worker. Cocok untuk cek stabilitas dasar, panas, dan respons perangkat saat CPU bekerja tinggi.
+            </p>
+
+            <div class="tester-summary">
+              <div class="tester-stat">
+                <strong id="cpu-core-count">-</strong>
+                <span>Logical core</span>
+              </div>
+              <div class="tester-stat">
+                <strong id="cpu-worker-count">0</strong>
+                <span>Worker aktif</span>
+              </div>
+              <div class="tester-stat">
+                <strong id="cpu-elapsed">00:00</strong>
+                <span>Durasi berjalan</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="tester-stack">
+            <article class="tester-card reveal">
+              <div class="stress-control-grid">
+                <div class="stress-control">
+                  <label for="cpu-workers">Jumlah worker</label>
+                  <div class="tester-range-wrap">
+                    <input id="cpu-workers" type="range" min="1" max="8" step="1" value="2" />
+                    <strong id="cpu-workers-label">2</strong>
+                  </div>
+                </div>
+                <div class="stress-control">
+                  <label for="cpu-intensity">Intensitas komputasi</label>
+                  <div class="tester-range-wrap">
+                    <input id="cpu-intensity" type="range" min="2000" max="18000" step="1000" value="7000" />
+                    <strong id="cpu-intensity-label">7000</strong>
+                  </div>
+                </div>
+              </div>
+
+              <div class="tester-compact-actions">
+                <button class="button button-primary" type="button" id="cpu-start">Mulai Stress CPU</button>
+                <button class="button button-secondary" type="button" id="cpu-stop">Stop</button>
+              </div>
+
+              <div class="camera-status" id="cpu-status" data-state="idle">
+                Mulai dengan worker sedikit dulu. Stress test yang terlalu lama bisa membuat perangkat panas dan kipas berputar lebih kencang.
+              </div>
+
+              <div class="camera-info-grid">
+                <div class="contact-block">
+                  <span>Operasi per detik</span>
+                  <strong id="cpu-ops-rate">-</strong>
+                </div>
+                <div class="contact-block">
+                  <span>Total operasi</span>
+                  <strong id="cpu-total-ops">0</strong>
+                </div>
+                <div class="contact-block">
+                  <span>Lag UI</span>
+                  <strong id="cpu-ui-lag">-</strong>
+                </div>
+              </div>
+            </article>
+
+            <article class="tester-card reveal">
+              <h2>Aktivitas Worker</h2>
+              <div class="cpu-worker-grid" id="cpu-worker-grid"></div>
+              <ul class="tester-log" id="cpu-log">
+                <li>Siap menjalankan stress test CPU.</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <div data-shared-footer data-asset-path=".."></div>
+    </div>
+
+    <a class="floating-wa" href="https://wa.me/6285183190794" target="_blank" rel="noreferrer" aria-label="Hubungi WhatsApp">
+      WA
+    </a>
+
+    <script src="../shared/header.js"></script>
+    <script src="../shared/footer.js"></script>
+    <script src="../script.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>

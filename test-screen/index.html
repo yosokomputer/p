@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tes Layar / Dead Pixel Test | Yoso Komputer</title>
+    <meta
+      name="description"
+      content="Tes layar dan dead pixel online untuk mengecek bintik mati, stuck pixel, backlight bleed, dan warna panel langsung dari browser."
+    />
+    <link rel="icon" type="image/jpeg" href="../file/logo.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Rajdhani:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <div data-shared-header data-asset-path=".." data-home-path="../index.html" data-active-nav="test-screen"></div>
+
+      <main class="tester-shell">
+        <section class="container tester-hero">
+          <div class="tester-panel reveal">
+            <p class="eyebrow">Screen Tester</p>
+            <h1>Cek layar untuk dead pixel, warna, dan bleed panel.</h1>
+            <p class="hero-text">
+              Gunakan warna penuh seperti putih, hitam, merah, hijau, dan biru untuk mencari pixel mati atau stuck pixel. Mode grid membantu mengecek area kecil dengan lebih teliti.
+            </p>
+
+            <div class="tester-summary">
+              <div class="tester-stat">
+                <strong id="screen-color-name">Putih</strong>
+                <span>Mode warna aktif</span>
+              </div>
+              <div class="tester-stat">
+                <strong id="screen-grid-state">Off</strong>
+                <span>Status grid pixel</span>
+              </div>
+              <div class="tester-stat">
+                <strong id="screen-fullscreen-state">Window</strong>
+                <span>Tampilan layar</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="tester-stack">
+            <article class="tester-card reveal">
+              <div class="tester-inline-actions">
+                <div>
+                  <h2>Kontrol Tes Layar</h2>
+                  <p>Pindah warna, aktifkan grid, atau jalankan mode auto-cycle untuk mengecek panel lebih cepat.</p>
+                </div>
+                <div class="tester-compact-actions">
+                  <button class="tester-reset" type="button" id="screen-prev">Sebelumnya</button>
+                  <button class="tester-reset" type="button" id="screen-next">Berikutnya</button>
+                  <button class="tester-reset" type="button" id="screen-auto">Auto Cycle</button>
+                  <button class="tester-reset" type="button" id="screen-grid">Grid Pixel</button>
+                  <button class="tester-reset" type="button" id="screen-fullscreen">Fullscreen</button>
+                </div>
+              </div>
+
+              <div class="camera-status" id="screen-status" data-state="idle">
+                Gunakan mode hitam untuk melihat backlight bleed, lalu lanjutkan ke warna penuh untuk menemukan dead pixel atau stuck pixel.
+              </div>
+
+              <div class="screen-palette" id="screen-palette"></div>
+            </article>
+
+            <article class="tester-card reveal">
+              <h2>Panduan Cek</h2>
+              <p>Lihat titik yang selalu hitam, selalu putih, atau selalu merah/hijau/biru. Jika hanya muncul pada satu warna, itu biasanya stuck pixel.</p>
+              <ul class="tester-log" id="screen-log">
+                <li>Siap menjalankan tes layar.</li>
+              </ul>
+              <p class="tester-hint">
+                Tips: bersihkan layar dulu, naikkan brightness seperlunya, lalu amati dari jarak dekat dan jauh. Double click area tes untuk fullscreen cepat.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="container tester-section reveal">
+          <article class="tester-card">
+            <div class="screen-stage" id="screen-stage" data-dark="false">
+              <div class="screen-stage-note">
+                <strong id="screen-stage-title">Putih</strong>
+                <span id="screen-stage-caption">Gunakan warna putih untuk mencari pixel yang tampak gelap atau bernoda.</span>
+              </div>
+            </div>
+          </article>
+        </section>
+      </main>
+
+      <div data-shared-footer data-asset-path=".."></div>
+    </div>
+
+    <a class="floating-wa" href="https://wa.me/6285183190794" target="_blank" rel="noreferrer" aria-label="Hubungi WhatsApp">
+      WA
+    </a>
+
+    <script src="../shared/header.js"></script>
+    <script src="../shared/footer.js"></script>
+    <script src="../script.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>

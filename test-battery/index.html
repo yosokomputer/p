@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tes Baterai | Yoso Komputer</title>
+    <meta
+      name="description"
+      content="Tes baterai browser untuk melihat level, charging state, waktu isi, waktu pakai, dan monitoring dasar baterai perangkat."
+    />
+    <link rel="icon" type="image/jpeg" href="../file/logo.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Rajdhani:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <div data-shared-header data-asset-path=".." data-home-path="../index.html" data-active-nav="test-battery"></div>
+
+      <main class="tester-shell">
+        <section class="container tester-hero">
+          <div class="tester-panel reveal">
+            <p class="eyebrow">Battery Tester</p>
+            <h1>Monitor status baterai langsung dari browser.</h1>
+            <p class="hero-text">
+              Browser modern hanya bisa membaca status dasar baterai seperti level, charging, dan estimasi waktu. Informasi wear level atau health pabrik biasanya tidak tersedia dari web.
+            </p>
+
+            <div class="tester-summary">
+              <div class="tester-stat">
+                <strong id="battery-support">Mengecek...</strong>
+                <span>Dukungan browser</span>
+              </div>
+              <div class="tester-stat">
+                <strong id="battery-level">-</strong>
+                <span>Level baterai</span>
+              </div>
+              <div class="tester-stat">
+                <strong id="battery-state">-</strong>
+                <span>Status daya</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="tester-stack">
+            <article class="tester-card reveal">
+              <div class="tester-inline-actions">
+                <div>
+                  <h2>Monitoring Baterai</h2>
+                  <p>Refresh untuk baca ulang status. Anda juga bisa memulai sesi monitor untuk melihat perubahan level dari waktu ke waktu.</p>
+                </div>
+                <div class="tester-compact-actions">
+                  <button class="tester-reset" type="button" id="battery-refresh">Refresh</button>
+                  <button class="tester-reset" type="button" id="battery-monitor">Mulai Monitor</button>
+                  <button class="tester-reset" type="button" id="battery-stop">Stop Monitor</button>
+                </div>
+              </div>
+
+              <div class="camera-status" id="battery-status" data-state="idle">
+                Menunggu pembacaan status baterai dari browser.
+              </div>
+
+              <div class="camera-info-grid">
+                <div class="contact-block">
+                  <span>Charging Time</span>
+                  <strong id="battery-charge-time">-</strong>
+                </div>
+                <div class="contact-block">
+                  <span>Discharging Time</span>
+                  <strong id="battery-discharge-time">-</strong>
+                </div>
+                <div class="contact-block">
+                  <span>Sesi Monitor</span>
+                  <strong id="battery-session-time">Belum aktif</strong>
+                </div>
+              </div>
+
+              <div class="battery-badge-list">
+                <div class="battery-badge">
+                  <span>Perubahan Level</span>
+                  <strong id="battery-delta">-</strong>
+                </div>
+                <div class="battery-badge">
+                  <span>Catatan Health</span>
+                  <strong id="battery-health-note">Browser terbatas</strong>
+                </div>
+              </div>
+            </article>
+
+            <article class="tester-card reveal">
+              <h2>Catatan Penting</h2>
+              <p>Jika Anda butuh health cycle count, wear level, atau full charge capacity, informasi itu biasanya hanya tersedia lewat sistem operasi atau aplikasi diagnostik khusus, bukan browser.</p>
+              <ul class="tester-log" id="battery-log">
+                <li>Siap membaca status baterai.</li>
+              </ul>
+              <p class="tester-hint">
+                Tips: jalankan tool ini sambil mencabut charger beberapa menit untuk melihat apakah level dan estimasi waktu bergerak normal.
+              </p>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <div data-shared-footer data-asset-path=".."></div>
+    </div>
+
+    <a class="floating-wa" href="https://wa.me/6285183190794" target="_blank" rel="noreferrer" aria-label="Hubungi WhatsApp">
+      WA
+    </a>
+
+    <script src="../shared/header.js"></script>
+    <script src="../shared/footer.js"></script>
+    <script src="../script.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>

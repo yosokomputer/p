@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tes Mouse dan Touchpad | Yoso Komputer</title>
+    <meta
+      name="description"
+      content="Tes mouse dan touchpad online untuk klik kiri kanan, scroll, drag, pointer movement, dan wheel langsung dari browser."
+    />
+    <link rel="icon" type="image/jpeg" href="../file/logo.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Rajdhani:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <div data-shared-header data-asset-path=".." data-home-path="../index.html" data-active-nav="test-mouse"></div>
+
+      <main class="tester-shell">
+        <section class="container tester-hero">
+          <div class="tester-panel reveal">
+            <p class="eyebrow">Mouse & Touchpad Tester</p>
+            <h1>Cek klik, scroll, drag, dan gerakan pointer.</h1>
+            <p class="hero-text">
+              Area tes ini membantu memastikan klik kiri, kanan, tengah, scroll wheel, dan gesture dasar touchpad tetap terbaca dengan baik di browser.
+            </p>
+
+            <div class="tester-summary">
+              <div class="tester-stat">
+                <strong id="mouse-click-count">0</strong>
+                <span>Total klik</span>
+              </div>
+              <div class="tester-stat">
+                <strong id="mouse-scroll-count">0</strong>
+                <span>Total scroll</span>
+              </div>
+              <div class="tester-stat">
+                <strong id="mouse-pointer-type">-</strong>
+                <span>Input terakhir</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="tester-stack">
+            <article class="tester-card reveal">
+              <div class="tester-inline-actions">
+                <div>
+                  <h2>Area Tes Pointer</h2>
+                  <p>Gerakkan pointer, lakukan drag, klik kanan, lalu scroll di area ini untuk melihat semua event yang tertangkap.</p>
+                </div>
+                <div class="tester-compact-actions">
+                  <button class="tester-reset" type="button" id="mouse-reset">Reset</button>
+                </div>
+              </div>
+
+              <div class="camera-status" id="mouse-status" data-state="idle">
+                Arahkan mouse atau touchpad ke area tes, lalu coba klik, drag, dan scroll.
+              </div>
+
+              <div class="mouse-pad" id="mouse-pad">
+                <canvas class="mouse-pad-canvas" id="mouse-pad-canvas"></canvas>
+                <div class="mouse-pad-target" id="mouse-pad-target">
+                  <strong>Area Tes Mouse & Touchpad</strong>
+                  <span>Pointer movement, click, drag, dan wheel akan muncul di sini.</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="tester-card reveal">
+              <h2>Status Tombol</h2>
+              <div class="mouse-button-grid">
+                <div class="mouse-button-state" id="mouse-left-state">Klik Kiri</div>
+                <div class="mouse-button-state" id="mouse-middle-state">Klik Tengah</div>
+                <div class="mouse-button-state" id="mouse-right-state">Klik Kanan</div>
+                <div class="mouse-button-state" id="mouse-wheel-state">Wheel / Scroll</div>
+              </div>
+              <div class="camera-info-grid">
+                <div class="contact-block">
+                  <span>Koordinat</span>
+                  <strong id="mouse-position">-</strong>
+                </div>
+                <div class="contact-block">
+                  <span>Aksi Terakhir</span>
+                  <strong id="mouse-action">Belum ada</strong>
+                </div>
+                <div class="contact-block">
+                  <span>Drag Aktif</span>
+                  <strong id="mouse-drag-state">Tidak</strong>
+                </div>
+              </div>
+              <ul class="tester-log" id="mouse-log">
+                <li>Siap menerima input mouse atau touchpad.</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <div data-shared-footer data-asset-path=".."></div>
+    </div>
+
+    <a class="floating-wa" href="https://wa.me/6285183190794" target="_blank" rel="noreferrer" aria-label="Hubungi WhatsApp">
+      WA
+    </a>
+
+    <script src="../shared/header.js"></script>
+    <script src="../shared/footer.js"></script>
+    <script src="../script.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>

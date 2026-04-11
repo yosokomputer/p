@@ -7,8 +7,17 @@
 
   const assetPath = mount.dataset.assetPath || ".";
   const homePath = mount.dataset.homePath || "./index.html";
-  const testKeyboardPath = mount.dataset.testKeyboardPath || "./test-keyboard/";
-  const testCameraPath = mount.dataset.testCameraPath || "./test-camera/";
+  const basePath = homePath.replace(/index\.html(?:#.*)?$/i, "");
+  const testKeyboardPath = mount.dataset.testKeyboardPath || `${basePath}test-keyboard/`;
+  const testCameraPath = mount.dataset.testCameraPath || `${basePath}test-camera/`;
+  const testAudioPath = mount.dataset.testAudioPath || `${basePath}test-audio/`;
+  const testMicPath = mount.dataset.testMicPath || `${basePath}test-mic/`;
+  const testScreenPath = mount.dataset.testScreenPath || `${basePath}test-screen/`;
+  const testSpeedPath = mount.dataset.testSpeedPath || `${basePath}test-speed/`;
+  const testMousePath = mount.dataset.testMousePath || `${basePath}test-mouse/`;
+  const testBatteryPath = mount.dataset.testBatteryPath || `${basePath}test-battery/`;
+  const testCpuPath = mount.dataset.testCpuPath || `${basePath}test-cpu/`;
+  const testGpuPath = mount.dataset.testGpuPath || `${basePath}test-gpu/`;
 
   mount.innerHTML = `
     <header class="topbar">
@@ -41,6 +50,14 @@
             <div class="nav-submenu">
               <a data-nav="test-keyboard" href="${testKeyboardPath}">Test Keyboard</a>
               <a data-nav="test-camera" href="${testCameraPath}">Test Kamera</a>
+              <a data-nav="test-audio" href="${testAudioPath}">Test Audio</a>
+              <a data-nav="test-mic" href="${testMicPath}">Test Mic</a>
+              <a data-nav="test-screen" href="${testScreenPath}">Test Layar</a>
+              <a data-nav="test-speed" href="${testSpeedPath}">Speedtest</a>
+              <a data-nav="test-mouse" href="${testMousePath}">Test Mouse</a>
+              <a data-nav="test-battery" href="${testBatteryPath}">Test Baterai</a>
+              <a data-nav="test-cpu" href="${testCpuPath}">Stress CPU</a>
+              <a data-nav="test-gpu" href="${testGpuPath}">Stress GPU</a>
             </div>
           </div>
         </nav>
@@ -81,9 +98,19 @@
     }
 
     const toolLinks = [
-      mount.querySelector('.nav a[data-nav="test-keyboard"]'),
-      mount.querySelector('.nav a[data-nav="test-camera"]'),
-    ].filter(Boolean);
+      "test-keyboard",
+      "test-camera",
+      "test-audio",
+      "test-mic",
+      "test-screen",
+      "test-speed",
+      "test-mouse",
+      "test-battery",
+      "test-cpu",
+      "test-gpu",
+    ]
+      .map((navId) => mount.querySelector(`.nav a[data-nav="${navId}"]`))
+      .filter(Boolean);
 
     for (const toolLink of toolLinks) {
       const toolPathname = normalizePath(new URL(toolLink.href, window.location.href).pathname);

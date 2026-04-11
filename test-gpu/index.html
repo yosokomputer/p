@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stress Test GPU | Yoso Komputer</title>
+    <meta
+      name="description"
+      content="Stress test GPU browser untuk menguji performa grafis dengan animasi WebGL intensif dan pemantauan FPS."
+    />
+    <link rel="icon" type="image/jpeg" href="../file/logo.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Rajdhani:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <div data-shared-header data-asset-path=".." data-home-path="../index.html" data-active-nav="test-gpu"></div>
+
+      <main class="tester-shell">
+        <section class="container tester-hero">
+          <div class="tester-panel reveal">
+            <p class="eyebrow">GPU Stress Test</p>
+            <h1>Jalankan animasi WebGL intensif untuk membebani grafis.</h1>
+            <p class="hero-text">
+              Tool ini memakai shader WebGL untuk memberi beban visual kontinu ke GPU. Hasil FPS membantu melihat apakah render tetap stabil saat kualitas dinaikkan.
+            </p>
+
+            <div class="tester-summary">
+              <div class="tester-stat">
+                <strong id="gpu-support">Mengecek...</strong>
+                <span>Dukungan WebGL</span>
+              </div>
+              <div class="tester-stat">
+                <strong id="gpu-fps">0 FPS</strong>
+                <span>Performa render</span>
+              </div>
+              <div class="tester-stat">
+                <strong id="gpu-quality-state">1.00x</strong>
+                <span>Skala render</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="tester-stack">
+            <article class="tester-card reveal">
+              <div class="stress-control-grid">
+                <div class="stress-control">
+                  <label for="gpu-quality">Skala render</label>
+                  <div class="tester-range-wrap">
+                    <input id="gpu-quality" type="range" min="0.75" max="1.75" step="0.05" value="1" />
+                    <strong id="gpu-quality-label">1.00x</strong>
+                  </div>
+                </div>
+              </div>
+
+              <div class="tester-compact-actions">
+                <button class="button button-primary" type="button" id="gpu-start">Mulai Stress GPU</button>
+                <button class="button button-secondary" type="button" id="gpu-stop">Stop</button>
+                <button class="button button-secondary" type="button" id="gpu-fullscreen">Fullscreen</button>
+              </div>
+
+              <div class="camera-status" id="gpu-status" data-state="idle">
+                Mulai dari kualitas 1.00x dulu. Semakin tinggi skala render, semakin berat beban GPU yang dijalankan browser.
+              </div>
+
+              <div class="gpu-stage" id="gpu-stage">
+                <canvas id="gpu-canvas"></canvas>
+              </div>
+            </article>
+
+            <article class="tester-card reveal">
+              <h2>Info Render</h2>
+              <div class="camera-info-grid">
+                <div class="contact-block">
+                  <span>Renderer</span>
+                  <strong id="gpu-renderer">-</strong>
+                </div>
+                <div class="contact-block">
+                  <span>Resolusi Render</span>
+                  <strong id="gpu-resolution">-</strong>
+                </div>
+                <div class="contact-block">
+                  <span>Durasi Test</span>
+                  <strong id="gpu-elapsed">00:00</strong>
+                </div>
+              </div>
+              <ul class="tester-log" id="gpu-log">
+                <li>Siap menjalankan stress test GPU.</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <div data-shared-footer data-asset-path=".."></div>
+    </div>
+
+    <a class="floating-wa" href="https://wa.me/6285183190794" target="_blank" rel="noreferrer" aria-label="Hubungi WhatsApp">
+      WA
+    </a>
+
+    <script src="../shared/header.js"></script>
+    <script src="../shared/footer.js"></script>
+    <script src="../script.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>

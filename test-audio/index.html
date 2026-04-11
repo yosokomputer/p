@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test Audio Online | Yoso Komputer</title>
+    <meta
+      name="description"
+      content="Halaman test audio online tanpa iklan untuk mengecek speaker, headset, atau output suara langsung dari browser."
+    />
+    <link rel="icon" type="image/jpeg" href="../file/logo.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Rajdhani:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <div
+        data-shared-header
+        data-asset-path=".."
+        data-home-path="../index.html"
+        data-test-keyboard-path="../test-keyboard/"
+        data-test-camera-path="../test-camera/"
+        data-test-audio-path="./"
+        data-test-mic-path="../test-mic/"
+        data-active-nav="test-audio"
+      ></div>
+
+      <main class="tester-shell">
+        <section class="container tester-hero">
+          <div class="tester-panel reveal">
+            <p class="eyebrow">Audio Tester</p>
+            <h1>Uji speaker atau headset langsung dari browser.</h1>
+            <p class="hero-text">
+              Tool ini memutar nada uji sederhana untuk memastikan output suara bekerja. Anda bisa mencoba mode stereo, kanal kiri, dan kanal kanan agar lebih mudah mengecek speaker, earphone, atau headset.
+            </p>
+
+            <div class="tester-summary">
+              <div class="tester-stat">
+                <strong id="audio-support">Mengecek...</strong>
+                <span>Dukungan browser</span>
+              </div>
+              <div class="tester-stat">
+                <strong id="audio-device">Default</strong>
+                <span>Output aktif</span>
+              </div>
+              <div class="tester-stat">
+                <strong id="audio-mode">Belum diputar</strong>
+                <span>Mode terakhir</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="tester-stack">
+            <article class="tester-card reveal">
+              <div class="camera-toolbar">
+                <div class="camera-select-wrap">
+                  <label for="audio-output-select">Pilih Output Audio</label>
+                  <select id="audio-output-select" class="camera-select">
+                    <option value="default">Default browser</option>
+                  </select>
+                </div>
+                <div class="camera-actions">
+                  <button class="button button-primary" type="button" id="audio-play-stereo">Putar Stereo</button>
+                  <button class="button button-secondary" type="button" id="audio-play-left">Kiri</button>
+                  <button class="button button-secondary" type="button" id="audio-play-right">Kanan</button>
+                  <button class="button button-secondary" type="button" id="audio-stop">Stop</button>
+                  <button class="button button-secondary" type="button" id="audio-refresh">Refresh Device</button>
+                </div>
+              </div>
+
+              <div class="tester-range-group">
+                <label class="tester-range-label" for="audio-volume">Volume tester</label>
+                <div class="tester-range-wrap">
+                  <input id="audio-volume" type="range" min="0.05" max="0.6" step="0.01" value="0.22" />
+                  <strong id="audio-volume-value">22%</strong>
+                </div>
+              </div>
+
+              <div class="camera-status" id="audio-status" data-state="idle">
+                Klik salah satu tombol play untuk memulai tes output audio dari browser.
+              </div>
+
+              <div class="audio-stage">
+                <div class="audio-stage-head">
+                  <strong>Visualizer Output</strong>
+                  <span id="audio-stage-label">Menunggu playback</span>
+                </div>
+                <div class="audio-bars" id="audio-bars" aria-hidden="true">
+                  <span class="audio-bar"></span>
+                  <span class="audio-bar"></span>
+                  <span class="audio-bar"></span>
+                  <span class="audio-bar"></span>
+                  <span class="audio-bar"></span>
+                  <span class="audio-bar"></span>
+                  <span class="audio-bar"></span>
+                  <span class="audio-bar"></span>
+                  <span class="audio-bar"></span>
+                  <span class="audio-bar"></span>
+                  <span class="audio-bar"></span>
+                  <span class="audio-bar"></span>
+                  <span class="audio-bar"></span>
+                  <span class="audio-bar"></span>
+                  <span class="audio-bar"></span>
+                  <span class="audio-bar"></span>
+                </div>
+              </div>
+            </article>
+
+            <article class="tester-card reveal">
+              <h2>Panduan Cek Audio</h2>
+              <p>Mulailah dari mode stereo. Jika headset atau speaker terhubung dengan baik, Anda akan mendengar nada test secara jelas dan panel ini akan mencatat mode yang sedang dipakai.</p>
+              <div class="camera-info-grid">
+                <div class="contact-block">
+                  <span>Status Playback</span>
+                  <strong id="audio-playback-state">Idle</strong>
+                </div>
+                <div class="contact-block">
+                  <span>Volume Aktif</span>
+                  <strong id="audio-volume-state">22%</strong>
+                </div>
+                <div class="contact-block">
+                  <span>Routing Device</span>
+                  <strong id="audio-routing-state">Default browser</strong>
+                </div>
+              </div>
+              <ul class="tester-log" id="audio-log">
+                <li>Siap memutar nada uji output audio.</li>
+              </ul>
+              <p class="tester-hint">
+                Tips: jika suara tidak keluar, cek volume sistem operasi, sambungan speaker/headset, dan izin autoplay browser. Pada beberapa browser, pemilihan output device hanya tersedia di konteks aman atau browser tertentu.
+              </p>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <div data-shared-footer data-asset-path=".."></div>
+    </div>
+
+    <a class="floating-wa" href="https://wa.me/6285183190794" target="_blank" rel="noreferrer" aria-label="Hubungi WhatsApp">
+      WA
+    </a>
+
+    <script src="../shared/header.js"></script>
+    <script src="../shared/footer.js"></script>
+    <script src="../script.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tes Kecepatan Internet | Yoso Komputer</title>
+    <meta
+      name="description"
+      content="Tes kecepatan internet online dari browser untuk mengukur ping, download, dan upload secara praktis."
+    />
+    <link rel="icon" type="image/jpeg" href="../file/logo.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Rajdhani:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <div data-shared-header data-asset-path=".." data-home-path="../index.html" data-active-nav="test-speed"></div>
+
+      <main class="tester-shell">
+        <section class="container tester-hero">
+          <div class="tester-panel reveal">
+            <p class="eyebrow">Speed Test</p>
+            <h1>Ukur ping, download, dan upload dari browser.</h1>
+            <p class="hero-text">
+              Tool ini menjalankan tes internet langsung dari browser. Hasilnya berguna untuk cek kasar kualitas koneksi saat browsing, meeting, download, atau upload file.
+            </p>
+
+            <div class="tester-summary">
+              <div class="tester-stat">
+                <strong id="speed-ping">-</strong>
+                <span>Ping rata-rata</span>
+              </div>
+              <div class="tester-stat">
+                <strong id="speed-download">-</strong>
+                <span>Download</span>
+              </div>
+              <div class="tester-stat">
+                <strong id="speed-upload">-</strong>
+                <span>Upload</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="tester-stack">
+            <article class="tester-card reveal">
+              <div class="camera-toolbar">
+                <div class="camera-select-wrap">
+                  <label for="speed-profile">Profil Tes</label>
+                  <select id="speed-profile" class="camera-select">
+                    <option value="quick">Cepat - hemat kuota</option>
+                    <option value="standard" selected>Standar - seimbang</option>
+                    <option value="heavy">Berat - hasil lebih stabil</option>
+                  </select>
+                </div>
+                <div class="camera-actions">
+                  <button class="button button-primary" type="button" id="speed-start">Mulai Speedtest</button>
+                  <button class="button button-secondary" type="button" id="speed-stop">Stop</button>
+                </div>
+              </div>
+
+              <div class="camera-status" id="speed-status" data-state="idle">
+                Jalankan tes saat tidak ada download atau upload besar lain agar hasilnya lebih konsisten.
+              </div>
+
+              <div class="speed-progress-card">
+                <div class="speed-progress-head">
+                  <strong id="speed-phase">Menunggu</strong>
+                  <span id="speed-progress-text">Belum ada pengujian aktif.</span>
+                </div>
+                <div class="speed-progress-track" aria-hidden="true">
+                  <div class="speed-progress-fill" id="speed-progress-fill"></div>
+                </div>
+              </div>
+            </article>
+
+            <article class="tester-card reveal">
+              <h2>Catatan Pengukuran</h2>
+              <p>Tes ini memakai trafik internet nyata dari browser. Profil lebih besar biasanya memberi hasil lebih stabil, tetapi akan memakai kuota lebih banyak.</p>
+              <div class="camera-info-grid">
+                <div class="contact-block">
+                  <span>Status Koneksi</span>
+                  <strong id="speed-connection-state">Mengecek...</strong>
+                </div>
+                <div class="contact-block">
+                  <span>Profil Aktif</span>
+                  <strong id="speed-profile-state">Standar</strong>
+                </div>
+                <div class="contact-block">
+                  <span>Server Tes</span>
+                  <strong id="speed-server-state">Cloudflare</strong>
+                </div>
+              </div>
+              <ul class="tester-log" id="speed-log">
+                <li>Siap menjalankan speedtest browser.</li>
+              </ul>
+              <p class="tester-hint">
+                Tips: matikan VPN jika ingin mengukur koneksi normal Anda. Hasil bisa berbeda dengan aplikasi speedtest native karena browser punya keterbatasan sendiri.
+              </p>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <div data-shared-footer data-asset-path=".."></div>
+    </div>
+
+    <a class="floating-wa" href="https://wa.me/6285183190794" target="_blank" rel="noreferrer" aria-label="Hubungi WhatsApp">
+      WA
+    </a>
+
+    <script src="../shared/header.js"></script>
+    <script src="../shared/footer.js"></script>
+    <script src="../script.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
