@@ -32,22 +32,89 @@
         <section class="container tester-hero">
           <div class="tester-panel reveal">
             <p class="eyebrow">Camera Tester</p>
-            <h1>Halaman test kamera sedang kami siapkan.</h1>
+            <h1>Test kamera langsung dari browser dengan alur izin yang jelas.</h1>
             <p class="hero-text">
-              Menu `Tools > Test Kamera` sudah aktif. Tahap berikutnya kita bisa lanjut buat pengecekan webcam langsung dari browser.
+              Halaman ini mengikuti pola tester kamera seperti referensi: minta izin akses kamera, tampilkan preview langsung, beri status yang jelas, dan sediakan kontrol dasar untuk mulai ulang atau menghentikan kamera.
             </p>
+
+            <div class="tester-summary">
+              <div class="tester-stat">
+                <strong id="camera-permission">Belum diminta</strong>
+                <span>Status izin kamera</span>
+              </div>
+              <div class="tester-stat">
+                <strong id="camera-device">Belum ada</strong>
+                <span>Perangkat aktif</span>
+              </div>
+              <div class="tester-stat">
+                <strong id="camera-resolution">-</strong>
+                <span>Resolusi aktif</span>
+              </div>
+            </div>
           </div>
 
           <div class="tester-stack">
             <article class="tester-card reveal">
-              <h2>Rencana Fitur</h2>
-              <p>Halaman ini nantinya bisa dipakai untuk menampilkan preview kamera, memilih perangkat kamera, dan mengecek izin akses webcam di browser.</p>
+              <div class="camera-toolbar">
+                <div class="camera-select-wrap">
+                  <label for="camera-select">Pilih Kamera</label>
+                  <select id="camera-select" class="camera-select">
+                    <option value="">Mendeteksi kamera...</option>
+                  </select>
+                </div>
+                <div class="camera-actions">
+                  <button class="button button-primary" type="button" id="camera-start">Izinkan Kamera</button>
+                  <button class="button button-secondary" type="button" id="camera-stop">Stop</button>
+                  <button class="button button-secondary" type="button" id="camera-refresh">Refresh Device</button>
+                </div>
+              </div>
+
+              <div class="camera-status" id="camera-status" data-state="idle">
+                Klik `Izinkan Kamera` lalu setujui permission browser untuk memulai tes kamera.
+              </div>
+
+              <div class="camera-stage">
+                <video id="camera-video" autoplay playsinline muted></video>
+                <div class="camera-overlay" id="camera-overlay">
+                  <strong>Menunggu akses kamera</strong>
+                  <span>Izin kamera diperlukan agar preview bisa tampil.</span>
+                </div>
+              </div>
             </article>
 
             <article class="tester-card reveal">
-              <h2>Status</h2>
-              <p>Saat ini halaman ini masih placeholder agar struktur menu `Tools` sudah lengkap dan tidak ada link yang kosong.</p>
+              <h2>Info Kamera</h2>
+              <p>Setelah kamera aktif, detail perangkat dan video akan tampil di panel ini agar pengguna mudah memastikan kamera yang benar sudah dipakai.</p>
+              <div class="camera-info-grid">
+                <div class="contact-block">
+                  <span>Nama Device</span>
+                  <strong id="camera-label">Belum aktif</strong>
+                </div>
+                <div class="contact-block">
+                  <span>Ukuran Video</span>
+                  <strong id="camera-size">-</strong>
+                </div>
+                <div class="contact-block">
+                  <span>Status Stream</span>
+                  <strong id="camera-stream-state">Idle</strong>
+                </div>
+              </div>
+              <ul class="tester-log" id="camera-log">
+                <li>Siap meminta izin akses kamera.</li>
+              </ul>
             </article>
+          </div>
+        </section>
+
+        <section class="container camera-privacy reveal">
+          <div class="tester-card">
+            <h2>Privasi & Permission</h2>
+            <p>
+              Browser akan meminta izin sebelum kamera aktif. Jika izin ditolak, halaman ini tidak akan bisa menampilkan preview sampai permission diberikan kembali dari browser.
+            </p>
+            <p class="tester-hint">
+              Tips: jika setelah klik tombol tidak muncul video, cek icon kamera di address bar browser dan pastikan akses webcam diizinkan untuk halaman ini.
+            </p>
           </div>
         </section>
       </main>
@@ -62,5 +129,6 @@
     <script src="../shared/header.js"></script>
     <script src="../shared/footer.js"></script>
     <script src="../script.js"></script>
+    <script src="./script.js"></script>
   </body>
 </html>

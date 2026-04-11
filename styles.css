@@ -693,6 +693,119 @@ a {
   color: var(--muted);
 }
 
+.camera-toolbar,
+.camera-actions,
+.camera-info-grid {
+  display: grid;
+  gap: 14px;
+}
+
+.camera-toolbar {
+  grid-template-columns: 1fr auto;
+  align-items: end;
+}
+
+.camera-actions {
+  grid-template-columns: repeat(3, auto);
+}
+
+.camera-select-wrap label {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.camera-select {
+  width: 100%;
+  min-height: 52px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 0 16px;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+  font: inherit;
+}
+
+.camera-status {
+  margin-top: 18px;
+  padding: 16px 18px;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.04);
+  line-height: 1.7;
+}
+
+.camera-status[data-state="success"] {
+  border-color: rgba(40, 199, 111, 0.45);
+  background: linear-gradient(135deg, rgba(40, 199, 111, 0.16), rgba(17, 24, 32, 0.92));
+}
+
+.camera-status[data-state="error"] {
+  border-color: rgba(255, 107, 107, 0.45);
+  background: linear-gradient(135deg, rgba(255, 107, 107, 0.16), rgba(17, 24, 32, 0.92));
+}
+
+.camera-status[data-state="pending"] {
+  border-color: rgba(255, 209, 102, 0.4);
+  background: linear-gradient(135deg, rgba(255, 209, 102, 0.12), rgba(17, 24, 32, 0.92));
+}
+
+.camera-stage {
+  position: relative;
+  margin-top: 18px;
+  border-radius: 28px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background:
+    radial-gradient(circle at top, rgba(40, 199, 111, 0.12), transparent 30%),
+    #0c1218;
+  aspect-ratio: 16 / 10;
+}
+
+.camera-stage video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: #0b1015;
+}
+
+.camera-overlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 10px;
+  padding: 28px;
+  text-align: center;
+  background: linear-gradient(180deg, rgba(11, 16, 21, 0.16), rgba(11, 16, 21, 0.78));
+}
+
+.camera-overlay strong {
+  font-family: "Rajdhani", sans-serif;
+  font-size: 2rem;
+}
+
+.camera-overlay span {
+  color: var(--muted);
+  max-width: 38ch;
+}
+
+.camera-overlay.is-hidden {
+  display: none;
+}
+
+.camera-info-grid {
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 22px;
+}
+
+.camera-privacy {
+  margin-top: 18px;
+}
+
 .tester-summary {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1031,7 +1144,8 @@ a {
   .service-grid,
   .process-grid,
   .trust-grid,
-  .tester-hero {
+  .tester-hero,
+  .camera-toolbar {
     grid-template-columns: 1fr 1fr;
   }
 
@@ -1128,7 +1242,10 @@ a {
   .footer-inner,
   .tester-hero,
   .tester-summary,
-  .tester-output {
+  .tester-output,
+  .camera-toolbar,
+  .camera-actions,
+  .camera-info-grid {
     grid-template-columns: 1fr;
   }
 
