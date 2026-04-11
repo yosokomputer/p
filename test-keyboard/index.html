@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test Keyboard | Yoso Komputer</title>
+    <meta
+      name="description"
+      content="Halaman test keyboard interaktif untuk mengecek tombol laptop atau komputer. Tekan tombol keyboard dan lihat statusnya langsung."
+    />
+    <link rel="icon" type="image/jpeg" href="../file/logo.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Rajdhani:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <div
+        data-shared-header
+        data-asset-path=".."
+        data-home-path="../index.html"
+        data-test-keyboard-path="./"
+        data-test-camera-path="../test-camera/"
+        data-active-nav="test-keyboard"
+      ></div>
+
+      <main class="tester-shell">
+        <section class="container tester-hero">
+          <div class="tester-panel reveal">
+            <p class="eyebrow">Keyboard Tester</p>
+            <h1>Cek tombol keyboard satu per satu dengan cepat.</h1>
+            <p class="hero-text">
+              Halaman ini terinspirasi dari pola tester visual seperti di `key-test`, dengan fokus pada tombol yang menyala saat ditekan dan informasi kode tombol yang aktif.
+            </p>
+
+            <div class="tester-summary">
+              <div class="tester-stat">
+                <strong id="press-count">0</strong>
+                <span>Total tombol terdeteksi</span>
+              </div>
+              <div class="tester-stat">
+                <strong id="unique-count">0</strong>
+                <span>Tombol unik sudah dicoba</span>
+              </div>
+              <div class="tester-stat">
+                <strong id="last-key">-</strong>
+                <span>Tombol terakhir</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="tester-stack">
+            <article class="tester-card reveal">
+              <div class="tester-tools">
+                <div class="tester-modes" aria-label="Platform keyboard">
+                  <button class="tester-tab active" type="button" data-platform="windows">Windows</button>
+                  <button class="tester-tab" type="button" data-platform="mac">Mac</button>
+                </div>
+                <button class="tester-reset" type="button" id="tester-reset">Reset</button>
+              </div>
+              <h2>Status Tombol</h2>
+              <p>Tekan tombol apa pun di keyboard Anda. Tombol yang aktif akan menyala, dan panel ini akan menampilkan detail event terbaru.</p>
+
+              <div class="tester-screen">
+                <div class="tester-screen-stream" id="tester-stream">
+                  <span>Menunggu input keyboard</span>
+                </div>
+              </div>
+
+              <div class="tester-output">
+                <div class="contact-block">
+                  <span>event.key</span>
+                  <code id="event-key">-</code>
+                </div>
+                <div class="contact-block">
+                  <span>event.code</span>
+                  <code id="event-code">-</code>
+                </div>
+                <div class="contact-block">
+                  <span>Lokasi</span>
+                  <code id="event-location">-</code>
+                </div>
+              </div>
+
+              <p class="tester-hint">
+                Tips: klik area halaman ini dulu jika perlu, lalu uji `Shift`, `Ctrl`, `Alt`, `Space`, tombol huruf, angka, dan panah untuk memastikan semuanya terbaca.
+              </p>
+            </article>
+
+            <article class="tester-card reveal">
+              <h2>Riwayat Singkat</h2>
+              <p>Daftar ini menampilkan beberapa tombol terakhir yang Anda tekan agar pengecekan terasa lebih mudah saat mengetes banyak tombol berurutan.</p>
+              <ol class="tester-log" id="tester-log">
+                <li>Belum ada tombol yang ditekan.</li>
+              </ol>
+            </article>
+          </div>
+        </section>
+
+        <section class="container keyboard-stage reveal">
+          <div class="tester-card">
+            <h2>Layout Keyboard</h2>
+            <p>Beberapa tombol khusus laptop bisa berbeda nama, tetapi event standar browser tetap akan ditampilkan jika terdeteksi.</p>
+
+            <div class="keyboard-grid" id="keyboard-grid">
+              <div class="keyboard-row">
+                <div class="key-cap span-2" data-code="Escape"><span>Esc</span><small>Escape</small></div>
+                <div class="key-cap" data-code="F1"><span>F1</span><small>Fn</small></div>
+                <div class="key-cap" data-code="F2"><span>F2</span><small>Fn</small></div>
+                <div class="key-cap" data-code="F3"><span>F3</span><small>Fn</small></div>
+                <div class="key-cap" data-code="F4"><span>F4</span><small>Fn</small></div>
+                <div class="key-cap" data-code="F5"><span>F5</span><small>Fn</small></div>
+                <div class="key-cap" data-code="F6"><span>F6</span><small>Fn</small></div>
+                <div class="key-cap" data-code="F7"><span>F7</span><small>Fn</small></div>
+                <div class="key-cap" data-code="F8"><span>F8</span><small>Fn</small></div>
+                <div class="key-cap" data-code="F9"><span>F9</span><small>Fn</small></div>
+                <div class="key-cap" data-code="F10"><span>F10</span><small>Fn</small></div>
+                <div class="key-cap" data-code="F11"><span>F11</span><small>Fn</small></div>
+                <div class="key-cap" data-code="F12"><span>F12</span><small>Fn</small></div>
+                <div class="key-cap span-2" data-code="PrintScreen"><span>PrtSc</span><small>Print</small></div>
+              </div>
+
+              <div class="keyboard-row">
+                <div class="key-cap" data-code="Backquote"><span>`</span><small>Backquote</small></div>
+                <div class="key-cap" data-code="Digit1"><span>1</span><small>Digit1</small></div>
+                <div class="key-cap" data-code="Digit2"><span>2</span><small>Digit2</small></div>
+                <div class="key-cap" data-code="Digit3"><span>3</span><small>Digit3</small></div>
+                <div class="key-cap" data-code="Digit4"><span>4</span><small>Digit4</small></div>
+                <div class="key-cap" data-code="Digit5"><span>5</span><small>Digit5</small></div>
+                <div class="key-cap" data-code="Digit6"><span>6</span><small>Digit6</small></div>
+                <div class="key-cap" data-code="Digit7"><span>7</span><small>Digit7</small></div>
+                <div class="key-cap" data-code="Digit8"><span>8</span><small>Digit8</small></div>
+                <div class="key-cap" data-code="Digit9"><span>9</span><small>Digit9</small></div>
+                <div class="key-cap" data-code="Digit0"><span>0</span><small>Digit0</small></div>
+                <div class="key-cap" data-code="Minus"><span>-</span><small>Minus</small></div>
+                <div class="key-cap" data-code="Equal"><span>=</span><small>Equal</small></div>
+                <div class="key-cap span-4" data-code="Backspace" data-role="backspace"><span>Backspace</span><small>Backspace</small></div>
+              </div>
+
+              <div class="keyboard-row">
+                <div class="key-cap span-3" data-code="Tab"><span>Tab</span><small>Tab</small></div>
+                <div class="key-cap" data-code="KeyQ"><span>Q</span><small>KeyQ</small></div>
+                <div class="key-cap" data-code="KeyW"><span>W</span><small>KeyW</small></div>
+                <div class="key-cap" data-code="KeyE"><span>E</span><small>KeyE</small></div>
+                <div class="key-cap" data-code="KeyR"><span>R</span><small>KeyR</small></div>
+                <div class="key-cap" data-code="KeyT"><span>T</span><small>KeyT</small></div>
+                <div class="key-cap" data-code="KeyY"><span>Y</span><small>KeyY</small></div>
+                <div class="key-cap" data-code="KeyU"><span>U</span><small>KeyU</small></div>
+                <div class="key-cap" data-code="KeyI"><span>I</span><small>KeyI</small></div>
+                <div class="key-cap" data-code="KeyO"><span>O</span><small>KeyO</small></div>
+                <div class="key-cap" data-code="KeyP"><span>P</span><small>KeyP</small></div>
+                <div class="key-cap" data-code="BracketLeft"><span>[</span><small>BracketLeft</small></div>
+                <div class="key-cap" data-code="BracketRight"><span>]</span><small>BracketRight</small></div>
+                <div class="key-cap span-3" data-code="Backslash"><span>\</span><small>Backslash</small></div>
+              </div>
+
+              <div class="keyboard-row">
+                <div class="key-cap span-4" data-code="CapsLock" data-role="capslock"><span>Caps Lock</span><small>CapsLock</small></div>
+                <div class="key-cap" data-code="KeyA"><span>A</span><small>KeyA</small></div>
+                <div class="key-cap" data-code="KeyS"><span>S</span><small>KeyS</small></div>
+                <div class="key-cap" data-code="KeyD"><span>D</span><small>KeyD</small></div>
+                <div class="key-cap" data-code="KeyF"><span>F</span><small>KeyF</small></div>
+                <div class="key-cap" data-code="KeyG"><span>G</span><small>KeyG</small></div>
+                <div class="key-cap" data-code="KeyH"><span>H</span><small>KeyH</small></div>
+                <div class="key-cap" data-code="KeyJ"><span>J</span><small>KeyJ</small></div>
+                <div class="key-cap" data-code="KeyK"><span>K</span><small>KeyK</small></div>
+                <div class="key-cap" data-code="KeyL"><span>L</span><small>KeyL</small></div>
+                <div class="key-cap" data-code="Semicolon"><span>;</span><small>Semicolon</small></div>
+                <div class="key-cap" data-code="Quote"><span>'</span><small>Quote</small></div>
+                <div class="key-cap span-5" data-code="Enter" data-role="enter"><span>Enter</span><small>Enter</small></div>
+              </div>
+
+              <div class="keyboard-row">
+                <div class="key-cap span-5" data-code="ShiftLeft" data-role="shift-left"><span>Shift</span><small>Left</small></div>
+                <div class="key-cap" data-code="KeyZ"><span>Z</span><small>KeyZ</small></div>
+                <div class="key-cap" data-code="KeyX"><span>X</span><small>KeyX</small></div>
+                <div class="key-cap" data-code="KeyC"><span>C</span><small>KeyC</small></div>
+                <div class="key-cap" data-code="KeyV"><span>V</span><small>KeyV</small></div>
+                <div class="key-cap" data-code="KeyB"><span>B</span><small>KeyB</small></div>
+                <div class="key-cap" data-code="KeyN"><span>N</span><small>KeyN</small></div>
+                <div class="key-cap" data-code="KeyM"><span>M</span><small>KeyM</small></div>
+                <div class="key-cap" data-code="Comma"><span>,</span><small>Comma</small></div>
+                <div class="key-cap" data-code="Period"><span>.</span><small>Period</small></div>
+                <div class="key-cap" data-code="Slash"><span>/</span><small>Slash</small></div>
+                <div class="key-cap span-5" data-code="ShiftRight" data-role="shift-right"><span>Shift</span><small>Right</small></div>
+              </div>
+
+              <div class="keyboard-row">
+                <div class="key-cap modifier tight-label" data-code="ControlLeft" data-role="control-left"><span>Ctrl</span><small>Left</small></div>
+                <div class="key-cap modifier icon-key" data-code="MetaLeft" data-role="meta-left">
+                  <span aria-label="Windows" data-role-label="meta-left-primary">
+                    <svg class="key-icon" viewBox="0 0 32 32" aria-hidden="true">
+                      <path d="M1 4.4 13.1 2.7v12H1Zm0 23.2 12.1 1.7V17.3H1Zm14 2 16 2.2V17.3H15Zm0-14.9H31V0L15 2.2Z"></path>
+                    </svg>
+                  </span>
+                  <small data-role-label="meta-left-secondary">Win</small>
+                </div>
+                <div class="key-cap modifier" data-code="Fn" data-role="fn"><span>Fn</span><small>Fn</small></div>
+                <div class="key-cap modifier" data-code="AltLeft" data-role="alt-left"><span>Alt</span><small>Left</small></div>
+                <div class="key-cap span-12" data-code="Space" data-role="space"><span>Space</span><small>Space</small></div>
+                <div class="key-cap modifier" data-code="AltRight" data-role="alt-right"><span>Alt</span><small>Right</small></div>
+                <div class="key-cap modifier tight-label" data-code="ContextMenu" data-role="context-menu"><span>Menu</span><small>Menu</small></div>
+                <div class="key-cap modifier tight-label" data-code="ControlRight" data-role="control-right"><span>Ctrl</span><small>Right</small></div>
+                <div class="arrow-cluster" aria-label="Arrow keys">
+                  <div class="key-cap arrow-up" data-code="ArrowUp"><span>▲</span><small>Up</small></div>
+                  <div class="key-cap arrow-left" data-code="ArrowLeft"><span>◀</span><small>Left</small></div>
+                  <div class="key-cap arrow-down" data-code="ArrowDown"><span>▼</span><small>Down</small></div>
+                  <div class="key-cap arrow-right" data-code="ArrowRight"><span>▶</span><small>Right</small></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <div data-shared-footer data-asset-path=".."></div>
+    </div>
+
+    <a class="floating-wa" href="https://wa.me/6285183190794" target="_blank" rel="noreferrer" aria-label="Hubungi WhatsApp">
+      WA
+    </a>
+
+    <script src="../shared/header.js"></script>
+    <script src="../shared/footer.js"></script>
+    <script src="../script.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
