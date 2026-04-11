@@ -1,5 +1,5 @@
 # Yoso Komputer
-
+https://yosokomputer.github.io/p/
 Landing page statis untuk usaha servis komputer dan laptop `Yoso Komputer`.
 
 ## File
