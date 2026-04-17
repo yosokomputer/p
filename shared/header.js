@@ -18,6 +18,7 @@
   const testBatteryPath = mount.dataset.testBatteryPath || `${basePath}test-battery/`;
   const testCpuPath = mount.dataset.testCpuPath || `${basePath}test-cpu/`;
   const testGpuPath = mount.dataset.testGpuPath || `${basePath}test-gpu/`;
+  const biosPasswordPath = mount.dataset.biosPasswordPath || `${basePath}bios-password/`;
 
   mount.innerHTML = `
     <header class="topbar">
@@ -58,6 +59,7 @@
               <a data-nav="test-battery" href="${testBatteryPath}">Test Baterai</a>
               <a data-nav="test-cpu" href="${testCpuPath}">Stress CPU</a>
               <a data-nav="test-gpu" href="${testGpuPath}">Stress GPU</a>
+              <a data-nav="bios-password" href="${biosPasswordPath}">Bios Password</a>
             </div>
           </div>
         </nav>
@@ -108,6 +110,7 @@
       "test-battery",
       "test-cpu",
       "test-gpu",
+      "bios-password",
     ]
       .map((navId) => mount.querySelector(`.nav a[data-nav="${navId}"]`))
       .filter(Boolean);

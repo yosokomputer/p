@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bios Password Generator | Yoso Komputer</title>
+    <meta
+      name="description"
+      content="Tool BIOS password generator untuk membantu pemulihan kode master pada beberapa tipe BIOS laptop dan komputer langsung dari browser."
+    />
+    <link rel="icon" type="image/jpeg" href="../file/logo.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Rajdhani:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+    <script defer src="./assets/bundle.411627e7ae43a8745b35.js"></script>
+  </head>
+  <body>
+    <div class="site-shell">
+      <div
+        data-shared-header
+        data-asset-path=".."
+        data-home-path="../index.html"
+        data-bios-password-path="./"
+        data-active-nav="bios-password"
+      ></div>
+
+      <main class="tester-shell bios-shell">
+        <section class="container tester-hero">
+          <div class="tester-panel reveal">
+            <p class="eyebrow">Bios Password</p>
+            <h1>Generator master password BIOS.</h1>
+            <p class="hero-text">
+              Masukkan hash code atau serial yang tampil pada layar BIOS lock, lalu tool ini akan mencoba menghasilkan password yang cocok untuk vendor yang didukung.
+            </p>
+
+            <div class="tester-summary">
+              <div class="tester-stat">
+                <strong>Offline Tool</strong>
+                <span>Perhitungan berjalan langsung di browser</span>
+              </div>
+              <div class="tester-stat">
+                <strong>Multi Vendor</strong>
+                <span>Dell, HP, Sony, Samsung, Phoenix, dan lainnya</span>
+              </div>
+              <div class="tester-stat">
+                <strong>Input Cepat</strong>
+                <span>Cukup tempel kode yang muncul di BIOS lock</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="tester-stack">
+            <article class="tester-card reveal">
+              <div class="tester-inline-actions">
+                <div>
+                  <h2>Masukkan Kode BIOS</h2>
+                  <p>Gunakan format yang sama persis seperti yang tampil di layar perangkat agar hasil generator lebih akurat.</p>
+                </div>
+              </div>
+
+              <form id="form_id" name="pwgen" class="bios-form">
+                <label class="tester-range-label" for="serial_id">Hash Code / Serial BIOS</label>
+                <input autocomplete="off" placeholder="Contoh: 1234567-595B" type="text" id="serial_id" class="bios-input" />
+                <input type="submit" class="button button-primary bios-submit" name="serial" id="button_id" value="Generate Password" />
+              </form>
+
+              <div class="camera-status" data-state="idle">
+                Tool ini tidak menjamin semua perangkat berhasil dibuka. Gunakan hanya untuk perangkat yang memang Anda miliki atau Anda tangani secara sah.
+              </div>
+            </article>
+
+            <article class="tester-card reveal" id="result_id">
+              <h2>Hasil Generator</h2>
+              <p>Jika format kode dikenali, password yang mungkin cocok akan muncul di bawah ini.</p>
+              <h3 id="try_this" class="bios-result-title" style="display: none;">Coba salah satu password berikut:</h3>
+              <div id="answer" class="bios-answer"></div>
+              <p id="dell_note" class="tester-hint bios-note" style="display: none;">
+                Untuk beberapa kode Dell, gunakan <strong>Ctrl + Enter</strong> saat memasukkan password ke BIOS, bukan hanya <strong>Enter</strong>.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="container camera-privacy reveal">
+          <div class="tester-card">
+            <h2>Format Kode yang Didukung</h2>
+            <p>Daftar ini membantu memastikan format input Anda sesuai dengan pola yang dikenali generator.</p>
+
+            <div class="bios-table-wrap">
+              <table class="bios-table">
+                <thead>
+                  <tr>
+                    <th>Vendor</th>
+                    <th>Tipe</th>
+                    <th>Contoh Hash / Serial</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Compaq</td>
+                    <td>5 digit desimal</td>
+                    <td><code>12345</code></td>
+                  </tr>
+                  <tr>
+                    <td>Dell</td>
+                    <td>Serial number</td>
+                    <td><code>1234567-595B</code><br /><code>1234567-D35B</code><br /><code>1234567-2A7B</code></td>
+                  </tr>
+                  <tr>
+                    <td>Fujitsu-Siemens</td>
+                    <td>5 digit desimal</td>
+                    <td><code>12345</code></td>
+                  </tr>
+                  <tr>
+                    <td>Fujitsu-Siemens</td>
+                    <td>8 digit heksadesimal</td>
+                    <td><code>DEADBEEF</code></td>
+                  </tr>
+                  <tr>
+                    <td>Fujitsu-Siemens</td>
+                    <td>5x4 heksadesimal</td>
+                    <td><code>AAAA-BBBB-CCCC-DEAD-BEEF</code></td>
+                  </tr>
+                  <tr>
+                    <td>Fujitsu-Siemens</td>
+                    <td>5x4 desimal</td>
+                    <td><code>1234-4321-1234-4321-1234</code></td>
+                  </tr>
+                  <tr>
+                    <td>HP</td>
+                    <td>5 digit desimal</td>
+                    <td><code>12345</code></td>
+                  </tr>
+                  <tr>
+                    <td>HP / Compaq Netbook</td>
+                    <td>10 karakter</td>
+                    <td><code>CNU1234ABC</code></td>
+                  </tr>
+                  <tr>
+                    <td>Insyde H20</td>
+                    <td>8 digit desimal</td>
+                    <td><code>03133610</code></td>
+                  </tr>
+                  <tr>
+                    <td>Phoenix</td>
+                    <td>5 digit desimal</td>
+                    <td><code>12345</code></td>
+                  </tr>
+                  <tr>
+                    <td>Sony</td>
+                    <td>7 digit serial</td>
+                    <td><code>1234567</code></td>
+                  </tr>
+                  <tr>
+                    <td>Samsung</td>
+                    <td>12 digit heksadesimal</td>
+                    <td><code>07088120410C0000</code></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="container camera-privacy reveal">
+          <div class="tester-card">
+            <h2>Catatan Penggunaan</h2>
+            <p>
+              Generator ini berdasarkan riset komunitas dan pola reverse engineering BIOS tertentu. Tidak semua model perangkat akan cocok, dan selalu ada kemungkinan vendor telah mengubah algoritmanya.
+            </p>
+            <p class="tester-hint">
+              Gunakan tool ini hanya untuk proses pemulihan pada perangkat milik sendiri atau perangkat pelanggan yang Anda tangani secara resmi.
+            </p>
+          </div>
+        </section>
+      </main>
+
+      <div data-shared-footer data-asset-path=".."></div>
+    </div>
+
+    <a class="floating-wa" href="https://wa.me/6285183190794" target="_blank" rel="noreferrer" aria-label="Hubungi WhatsApp">
+      WA
+    </a>
+
+    <script src="../shared/header.js"></script>
+    <script src="../shared/footer.js"></script>
+    <script src="../script.js"></script>
+  </body>
+</html>

@@ -183,8 +183,10 @@ a {
 }
 
 .nav-submenu a {
+  display: block;
   padding: 8px 12px;
   border-radius: 12px;
+  color: var(--muted);
 }
 
 .nav-submenu a:hover,
@@ -1385,6 +1387,145 @@ a {
   margin-top: 10px;
 }
 
+.bios-shell .tester-card code,
+.bios-answer code {
+  color: var(--accent-soft);
+  font-family: "Rajdhani", sans-serif;
+  font-size: 0.98rem;
+}
+
+.bios-form {
+  display: grid;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.bios-input {
+  width: 100%;
+  min-height: 56px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 0 18px;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+  font: inherit;
+}
+
+.bios-input:focus {
+  outline: 2px solid rgba(40, 199, 111, 0.35);
+  outline-offset: 2px;
+}
+
+.bios-submit {
+  justify-self: start;
+}
+
+.bios-result-title {
+  margin: 18px 0 10px;
+  font-family: "Rajdhani", sans-serif;
+  font-size: 1.35rem;
+}
+
+.bios-answer {
+  display: grid;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.bios-answer:empty::before {
+  content: "Belum ada hasil. Masukkan kode BIOS untuk mulai generate password.";
+  display: block;
+  padding: 18px;
+  border: 1px dashed rgba(255, 255, 255, 0.14);
+  border-radius: 18px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.bios-answer .alert,
+.bios-answer .alert-success,
+.bios-answer .alert-warning,
+.bios-answer .alert-danger,
+.bios-answer .alert-info {
+  padding: 16px 18px;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.bios-answer ul,
+.bios-answer ol {
+  margin: 10px 0 0;
+  padding-left: 18px;
+}
+
+.bios-answer li + li {
+  margin-top: 8px;
+}
+
+.bios-answer .answer_table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.bios-answer .answer_table td,
+.bios-answer .answer_table th {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+
+.bios-answer .answer_table tr:last-child td {
+  border-bottom: 0;
+}
+
+.bios-note strong {
+  color: var(--text);
+}
+
+.bios-table-wrap {
+  margin-top: 20px;
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.bios-table {
+  width: 100%;
+  min-width: 720px;
+  border-collapse: collapse;
+}
+
+.bios-table th,
+.bios-table td {
+  padding: 16px 18px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+
+.bios-table th {
+  font-family: "Rajdhani", sans-serif;
+  font-size: 1.02rem;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.bios-table td {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.bios-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
 .keyboard-stage {
   margin-top: 18px;
 }
@@ -1620,17 +1761,31 @@ a {
   }
 
   .nav-parent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
     text-align: left;
   }
 
+  .nav-parent::after {
+    content: "+";
+    font-size: 1.2rem;
+    line-height: 1;
+    color: var(--accent-soft);
+  }
+
+  .nav-group.is-open .nav-parent::after {
+    content: "-";
+  }
+
   .nav-submenu {
+    display: none;
     position: static;
     left: auto;
+    width: 100%;
     min-width: 0;
     margin-top: 10px;
-    opacity: 0;
-    pointer-events: none;
     transform: none;
     max-height: 0;
     overflow: hidden;
@@ -1646,11 +1801,41 @@ a {
   }
 
   .nav-group.is-open .nav-submenu {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
     opacity: 1;
     pointer-events: auto;
-    max-height: min(70vh, 420px);
+    transform: none;
+    left: auto;
+    max-height: none;
+    overflow: visible;
     padding: 12px;
     border-width: 1px;
+  }
+
+  .nav-submenu,
+  .nav-submenu * {
+    color: var(--text) !important;
+    -webkit-text-fill-color: var(--text) !important;
+    text-shadow: none !important;
+  }
+
+  .nav-submenu a {
+    display: block;
+    width: 100%;
+    min-height: 44px;
+    padding: 10px 12px;
+    color: var(--text) !important;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.5;
+    position: relative;
+    z-index: 1;
+    opacity: 1;
+    visibility: visible;
+    -webkit-text-fill-color: var(--text) !important;
+    text-shadow: none !important;
   }
 
   .hero,
